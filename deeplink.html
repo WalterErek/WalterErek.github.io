@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		body,ul,li{
+			margin:0;
+			padding:0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		ul{
+			margin: 5% 5%;
+		}
+		li{
+			display: inline-block;
+			width: 40%;
+			/*//background-color: #ff66ee;*/
+			margin: 5%;
+			border-radius: 8px;
+			text-align: center;
+			padding: 8px 0;
+			color: #000;
+		}
+
+		li:nth-child(odd){
+			/*//background-color: grey;*/
+		}
+		a{
+			text-decoration: none;
+			padding: 8px 0;
+			color:#000000;
+			text-align: center;
+			display: block;
+		}
+	</style>
+	<title>wdd测试跳转入口</title>
+</head>
+<body>
+	<ul>
+	</ul>
+</body>
+<script>
+var Global = {
+	urlList:{
+		'cfxfzz':'//testm.10jqka.com.cn/vaserviece/mobilecfxf/prime/v2/index.html',
+		'scheme':'amihexin://',
+		'投顾':'//testm.10jqka.com.cn/vaserviece/TGmobilecfxf/index.html',
+        '安卓deeplink':'https://testm.10jqka.com.cn/a.html',
+	},
+};
+window.onload = function(){
+	var html = '';
+	var liHtml;
+	for(key in Global.urlList){
+		//liHtml = '<li><a href="'+Global.urlList[key]+'">'+key+'</a></li>';
+		liHtml = '<li onclick="window.location.href=\''+Global.urlList[key]+'\'">'+key+'</li>';
+		html += liHtml;
+	}
+	var ul = document.querySelector('ul');
+	ul.innerHTML = html;
+	var liArr = document.getElementsByTagName('li');
+		[].forEach.call(liArr,function(value,i,arr){
+		//value.style.backgroundColor = rgb(rangeRandom(0,255),rangeRandom(0,255),rangeRandom(0,255));
+		value.style.backgroundColor = 'rgb('+rangeRandom(0,255)+','+rangeRandom(0,255)+','+rangeRandom(0,255)+')';
+console.log(rangeRandom(0,255));
+	});
+}
+function rangeRandom(min,max){
+	return Math.floor(Math.random()*(max-min)+min);
+}
+
+</script>
+</html>
