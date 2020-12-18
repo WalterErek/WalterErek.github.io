@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="360-fullscreen" content="true">
+	<meta name="rem" content="design-width=750,max-width=480">
+	<title>demo page</title>
+
+	<script src="//s.thsi.cn/cb?;js/m/v2.12/common/;zepto.js;bridge.js;user.js;basic.js;rem.js;js/m/v2.13/business/;stat.js"></script>
+	<script type="text/javascript" src="//s.thsi.cn/js/m/v2.9/business/thsIphoneXAdapter.js"></script>
+	<link rel="stylesheet" href="//s.thsi.cn/sns/lib/front/thsc-hxmui/0.2.2/style/index.css">
+    <script src="//testm.10jqka.com.cn/jpage/wdd/demo/wxShare_v2.js"></script>
+	<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="styles/reset.css">
+	<!-- endbuild -->
+<script src="//s.thsi.cn/js/m/eruda.js"></script>
+	<!-- build:remove -->
+	<script type="text/javascript" src="//s.thsi.cn/js/m/business/less.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body>
+	<div id="app" class="hxmui-color__txt--main hxmui-background__global" v-cloak>
+	</div>
+<wx-open-launch-app
+    id="launch-btn"
+    appid="wxc30efa39c0191186"
+    extinfo="your-extinfo" 
+>
+    <template>
+    <style>.btn{padding: 12px}</style>
+    <button class="btn">哈哈哈哈</button>
+    </template>
+</wx-open-launch-app>
+	<script src="//s.thsi.cn/js/m/vue/2.6.11.min.js"></script>
+	<script src="//s.thsi.cn/sns/lib/front/thsc-hxmui/0.2.2/index.js"></script>
+
+	<!-- build:js scripts/main.js -->
+<!--	<script type="text/javascript" src="scripts/index.js"></script> -->
+	<!-- endbuild -->
+    <script>
+window.onload=function(){
+        wxShare.init();
+        var btn = document.querySelector('#launch-btn');
+        btn.addEventListener('lauch',function(e){
+            console.log('success');
+        });
+        btn.addEventListener('error',function(e){
+           console.log('err',e.detail); 
+        });
+    }
+
+    </script>
+</body>
+
+</html>
